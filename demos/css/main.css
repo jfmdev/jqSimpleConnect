@@ -1,0 +1,83 @@
+
+root { 
+    display: block;
+}
+
+body {
+    font-size: 11pt;
+    font-family: Arial,Verdana;
+}
+
+span.highlight {
+    text-decoration:underline;
+}
+
+div.title {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    color: blueviolet;
+}
+
+h1 {
+    color: darkgreen;
+    font-size: 13pt;
+    text-decoration: underline;
+}
+
+h2 {
+    color: teal;
+    font-size: 12pt;
+}
+
+h2.method {
+    color: #600000;
+    border-bottom: 1px solid lightgray;
+}
+
+
+div.method div.title {
+    font-size: 11pt;
+    text-align: left;
+    color: black;
+    margin-top: 16px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
+
+div.method div.definition,
+div.method div.description {
+    margin-left: 50px;
+}
+div.method div.definition {
+    margin-bottom: 24px;
+}
+
+div.method div.definition span {
+    padding: 8px;
+    font-size: 10pt;
+    border: 1px solid gray;
+    background-color: #f0f0f0;
+    font-family: "Courier New";
+}
+
+div.method td {
+    padding: 4px;
+    vertical-align: top;
+    text-align: left;
+}
+
+div.method td.name {
+    color: #808080;
+}
+
+div.method td.description strong {
+    font-weight: normal;
+    color: #808080;
+}
+
+
+div.method td.description ul {
+    margin-top: 4px;
+    margin-left: 5px;
+}

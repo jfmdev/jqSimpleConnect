@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+    <head>
+        <title>jsSimpleConnect - Advanced examples</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link type="text/css" rel="stylesheet" href="css/main.css"/>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jqSimpleConnect.min.js"></script>
+    </head>
+    <body>
+        <div class="title">jsSimpleConnect - Advanced examples</div>
+        
+        <h1>Requirements</h1>
+        
+        <div>In order to run the examples, the JavaScript libraries of <em>jqSimpleConnect</em> and <em>jQuery</em> must be included in the
+        &lt;head&gt; of the HTML file:</div>
+        
+        <pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jqSimpleConnect-1.0.js&quot;&gt;&lt;/script&gt;
+        </pre>
+        
+        <h1>Demo 1</h1>
+        
+        <h2>Code</h2>
+        <pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+    jQuery(document).ready(function() {
+        // Create connections.
+        var conn1 = jqSimpleConnect.connect(&quot;#div_a&quot;, &quot;#div_b&quot;);
+        var conn2 = jqSimpleConnect.connect(&quot;#div_c&quot;, &quot;#div_d&quot;);
+                    
+        // Define the link's behaviours for remove the connections
+        jQuery(&quot;#a_remove_conn1&quot;).click(function() {
+            if(conn1 != null) {
+                jqSimpleConnect.removeConnection(conn1);
+                conn1 = null;
+            }
+        return false;
+        });
+                   
+        jQuery(&quot;#a_remove_conn2&quot;).click(function() {
+            if(conn2 != null) {
+                jqSimpleConnect.removeConnection(conn2);
+                conn2 = null;
+            }
+        return false;
+        });
+    });
+&lt;/script&gt;
+&lt;div style=&quot;position:relative; height: 100px;&quot;&gt;
+    &lt;div id=&quot;div_a&quot; style=&quot;position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div A&lt;/div&gt;
+    &lt;div id=&quot;div_b&quot; style=&quot;position:absolute; top:50px; left:150px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div B&lt;/div&gt;
+    &lt;div id=&quot;div_c&quot; style=&quot;position:absolute; top:25px; left:250px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div C&lt;/div&gt;
+    &lt;div id=&quot;div_d&quot; style=&quot;position:absolute; top:25px; left:400px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div D&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;a href=&quot;#&quot; id=&quot;a_remove_conn1&quot;&gt;Remove first connection&lt;/a&gt; | 
+    &lt;a href=&quot;#&quot; id=&quot;a_remove_conn2&quot;&gt;Remove second connection&lt;/a&gt;
+&lt;/div&gt;
+        </pre>
+        
+        <h2>Result</h2>
+        <div>
+            <script type="text/javascript">
+                jQuery(document).ready(function() {
+                    // Create connections.
+                    var conn1 = jqSimpleConnect.connect("#div_a", "#div_b");
+                    var conn2 = jqSimpleConnect.connect("#div_c", "#div_d");
+                    
+                    // Define the link's behaviours for remove the connections
+                    jQuery("#a_remove_conn1").click(function() {
+                        if(conn1 != null) {
+                            jqSimpleConnect.removeConnection(conn1);
+                            conn1 = null;
+                        }
+                        return false;
+                    });
+                   
+                    jQuery("#a_remove_conn2").click(function() {
+                        if(conn2 != null) {
+                            jqSimpleConnect.removeConnection(conn2);
+                            conn2 = null;
+                        }
+                        return false;
+                    });
+                });
+            </script>
+            <div style="position:relative; height: 100px;">
+                <div id="div_a" style="position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;">Div A</div>
+                <div id="div_b" style="position:absolute; top:50px; left:150px; border:1px solid black; background-color:white; padding:5px;">Div B</div>
+                <div id="div_c" style="position:absolute; top:25px; left:250px; border:1px solid black; background-color:white; padding:5px;">Div C</div>
+                <div id="div_d" style="position:absolute; top:25px; left:400px; border:1px solid black; background-color:white; padding:5px;">Div D</div>
+            </div>
+            <div>
+                <a href="#" id="a_remove_conn1">Remove first connection</a> | 
+                <a href="#" id="a_remove_conn2">Remove second connection</a>
+            </div>
+        </div>
+
+        <h1>Demo 2</h1>
+        
+        <h2>Code</h2>
+        <pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+    jQuery(document).ready(function() {
+        // Create connection.
+        var conn3 = jqSimpleConnect.connect(&quot;#div_e&quot;, &quot;#div_f&quot;);
+                    
+        // Each second, move 'Div E' and repaint the connection.
+        var flag = true;
+        setInterval(function() {
+            var newPos = flag? 50 : 5;                       
+            jQuery(&quot;#div_e&quot;).css('left', newPos);                            
+            jqSimpleConnect.repaintConnection(conn3);
+            flag = !flag;
+        }, 750);
+    });                
+&lt;/script&gt;
+&lt;div style=&quot;position:relative; height: 110px;&quot;&gt;
+    &lt;div id=&quot;div_e&quot; style=&quot;position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div E&lt;/div&gt;
+    &lt;div id=&quot;div_f&quot; style=&quot;position:absolute; top:75px; left:150px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div F&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+        
+        <h2>Result</h2>
+        <div>
+            <script type="text/javascript">
+                 jQuery(document).ready(function() {
+                    // Create connection.
+                    var conn3 = jqSimpleConnect.connect("#div_e", "#div_f");
+                    
+                    // Each second, move 'Div E' and repaint the connection.
+                    var flag = true;
+                    setInterval(function() {
+                        var newPos = flag? 50 : 5;                       
+                        jQuery("#div_e").css('left', newPos);                            
+                        jqSimpleConnect.repaintConnection(conn3);
+                        flag = !flag;
+                    }, 750);
+                });                
+            </script>
+            <div style="position:relative; height: 110px;">
+                <div id="div_e" style="position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;">Div E</div>
+                <div id="div_f" style="position:absolute; top:75px; left:150px; border:1px solid black; background-color:white; padding:5px;">Div F</div>
+            </div>
+        </div>
+
+        <h1>Demo 3</h1>
+        
+        <h2>Code</h2>
+        <pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+    jQuery(document).ready(function() {
+        // Create connection.
+        var conn4 = jqSimpleConnect.connect(&quot;#div_g&quot;, &quot;#div_h&quot;);
+                    
+        // Animate 'Div G'.
+        DivG_Anim1(conn4);
+        });
+                
+    // Define animation functions.
+    function DivG_Anim1(connection) {
+        jQuery('#div_g').animate(
+            { top: '+=70' },
+            {
+                duration: 5000,
+                step: function() { 
+                    // Repaint connection.
+                    jqSimpleConnect.repaintConnection(connection);
+                },
+                complete: function() {
+                    // Init second animation.
+                    DivG_Anim2(connection);
+                    }
+            }
+        );
+    }
+    
+    function DivG_Anim2(connection) {
+        jQuery('#div_g').animate(
+            { top: '-=70' },
+            {
+                duration: 5000,
+                step: function() { 
+                    // Repaint connection.
+                    jqSimpleConnect.repaintConnection(connection);
+                },
+                complete: function() {
+                    // Re-init first animation.
+                    DivG_Anim1(connection);
+                }
+            }
+        );
+    }
+&lt;/script&gt;
+&lt;div style=&quot;position:relative; height: 110px;&quot;&gt;
+    &lt;div id=&quot;div_g&quot; style=&quot;position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div G&lt;/div&gt;
+    &lt;div id=&quot;div_h&quot; style=&quot;position:absolute; top:75px; left:150px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div H&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+        
+        <h2>Result</h2>
+        <div>
+            <script type="text/javascript">
+                jQuery(document).ready(function() {
+                    // Create connection.
+                    var conn4 = jqSimpleConnect.connect("#div_g", "#div_h");
+                    
+                    // Animate 'Div G'.
+                    DivG_Anim1(conn4);
+                });
+                
+                // Define animation functions.
+                function DivG_Anim1(connection) {
+                    jQuery('#div_g').animate(
+                        { top: '+=70' },
+                        {
+                            duration: 5000,
+                            step: function() { 
+                                // Repaint connection.
+                                jqSimpleConnect.repaintConnection(connection);
+                            },
+                            complete: function() {
+                                // Init second animation.
+                                DivG_Anim2(connection);
+                            }
+                        }
+                    );
+                }
+                function DivG_Anim2(connection) {
+                    jQuery('#div_g').animate(
+                        { top: '-=70' },
+                        {
+                            duration: 5000,
+                            step: function() { 
+                                // Repaint connection.
+                                jqSimpleConnect.repaintConnection(connection);
+                            },
+                            complete: function() {
+                                // Re-init first animation.
+                                DivG_Anim1(connection);
+                            }
+                        }
+                    );
+                }
+            </script>
+            <div style="position:relative; height: 110px;">
+                <div id="div_g" style="position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;">Div G</div>
+                <div id="div_h" style="position:absolute; top:75px; left:150px; border:1px solid black; background-color:white; padding:5px;">Div H</div>
+            </div>
+        </div>        
+    </body>
+</html>

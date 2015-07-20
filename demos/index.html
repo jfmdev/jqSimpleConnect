@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+    <head>
+        <title>jqSimpleConnect - Introduction</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body>
+        <div class="title">jqSimpleConnect</div>
+        
+        <h1>Overview</h1>
+        
+        <div>
+            <p><strong>jqSimpleConnect</strong> is a lightweight JavaScript library which provides the functionality for visually 
+            connect elements in a web page. It uses <em>&lt;div&gt;</em> elements to draw the connectors, in order to avoid 
+            dependencies with SVG and Canvas and in order to be more fast and simple.</p>
+            <p>His only requirement is <span class="highlight">jQuery</span>, another JavaScript library, which must be included 
+            in the web page along with <span class="highlight">jqSimpleConnect</span>.</p>
+            <p>jqSimpleConnect is free software, is licensed under LGPL v3, so it can be used in both open source and commercial
+            projects.</p>
+        </div>
+
+        <h1>Use</h1>
+        
+        <div>
+            <p>In order to use <span class="highlight">jqSimpleConnect</span>, the only thing that you have to do is to include 
+            the JavaScript files of <span class="highlight">jqSimpleConnect</span> and <span class="highlight">jQuery</span> into 
+            your page's <em>&lt;head&gt;</em> tag:</p>
+            
+            <pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jqSimpleConnect.min.js&quot;&gt;&lt;/script&gt;
+            </pre>
+        </div>
+        
+        <h1>API Documentation</h1>
+        
+        <div>
+            <p><span class="highlight">jqSimpleConnect</span> is really simple, it only has five methods:</p>
+            <ul>
+                <li><strong>jqSimpleConnect.connect</strong>: draws a connection between two elements.</li>
+                <li><strong>jqSimpleConnect.repaintConnection</strong>: repaints an specific connection.</li>
+                <li><strong>jqSimpleConnect.repaintAll</strong>: repaints all the connections from the page.</li>
+                <li><strong>jqSimpleConnect.removeConnection</strong>: removes an specific connection.</li>
+                <li><strong>jqSimpleConnect.removeAll</strong>: removes all the connections from the page.</li>
+            </ul>
+            <p>A full description of each method can be found <a href="documentation.html" title="API Documentation">here</a></p>
+        </div>
+                
+        <h1>Examples</h1>
+        
+        <div>
+            You can find examples of the use of <span class="highlight">jqSimpleConnect</span> in the following pages:
+            <ul>
+                <li><a href="demo1.html" title="Basic examples">Basic examples</a></li>
+                <li><a href="demo2.html" title="Advanced examples">Advanced examples</a></li>
+            </ul>
+        </div>
+        
+    </body>
+</html>

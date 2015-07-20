@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+    <head>
+        <title>jqSimpleConnect - API Documentation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body>
+        <div class="title">jqSimpleConnect - API Documentation</div>
+        
+        <h1>Requirements</h1>
+        <div>
+            <p>In order to use <span class="highlight">jqSimpleConnect</span>, the only thing that you have to do is to include 
+            the JavaScript files of <span class="highlight">jqSimpleConnect</span> and <span class="highlight">jQuery</span> into 
+            your page's <em>&lt;head&gt;</em> tag:</p>
+            
+            <pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jqSimpleConnect.min.js&quot;&gt;&lt;/script&gt;
+            </pre>
+        </div>
+
+        <h1>Methods description</h1>
+        
+        <h2 class="method">jqSimpleConnect.connect</h2>
+        
+        <div class="method">
+            <div class="definition"><span>jqSimpleConnect.connect = function(elementA, elementB, options)</span></div>
+            
+            <div class="description">Draws a connection between the elements "A" and "B".</div>
+            
+            <div class="title">Parameters</div>
+            <div class="description">
+                <table>
+                    <tr>
+                        <td class="name">elementA</td>
+                        <td class="description">A CSS selector or a jQuery's object for select the first element.</td>
+                    </tr>
+                    <tr>
+                        <td class="name">elementB</td>
+                        <td class="description">A CSS selector or a jQuery's object for select the second element.</td>
+                    </tr>
+                    <tr>
+                        <td class="name">options</td>
+                        <td class="description">
+                            <div><em>(optional)</em> An associative array with the properties (all of them optionals):</div>
+                            <ul>
+                                <li><strong>color</strong>: which defines the color of the connection.</li>
+                                <li><strong>radius</strong>: which defines the width of the connection's lines.</li>
+                                <li><strong>roundedCorners</strong>: a boolean indicating if the corners must be round (only available
+                                in brownsers which supports the CSS property 'border-radius').</li>
+                                <li><strong>anchorA</strong>: which defines the anchor type of the first element ('horizontal' or 'vertical').</li>
+                                <li><strong>anchorB</strong>: which defines the anchor type of the second element ('horizontal' or 'vertical').</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="title">Returns</div>
+            <div class="description">An string which identifies uniquely the connection.</div>
+        </div>
+        
+        <div><br/></div>
+        
+        <h2 class="method">jqSimpleConnect.repaintConnection</h2>
+
+        <div class="method">
+            <div class="definition"><span>jqSimpleConnect.repaintConnection = function(connectionId)</span></div>
+            
+            <div class="description">Repaints an specific connection from the page.</div>
+            
+            <div class="title">Parameters</div>
+            <div class="description">
+                <table>
+                    <tr>
+                        <td class="name">connectionId</td>
+                        <td class="description">The connection's unique identifier.</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="title">Returns</div>
+            <div class="description"><em>true</em> if the connection was repainted or <em>false</em> if none connection
+            with that identifier was found.</div>
+        </div>
+        
+        <div><br/></div>
+        
+        <h2 class="method">jqSimpleConnect.repaintAll</h2>
+        
+        <div class="method">
+            <div class="definition"><span>jqSimpleConnect.repaintAll = function()</span></div>
+            
+            <div class="description">Repaints all the connections in the page.</div>
+        </div>
+        
+        <div><br/></div>
+        
+        <h2 class="method">jqSimpleConnect.removeConnection</h2>
+        
+        <div class="method">
+            <div class="definition"><span>jqSimpleConnect.removeConnection = function(connectionId)</span></div>
+            
+            <div class="description">Removes an specific connection from the page.</div>
+            
+            <div class="title">Parameters</div>
+            <div class="description">
+                <table>
+                    <tr>
+                        <td class="name">connectionId</td>
+                        <td class="description">The connection's unique identifier.</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="title">Returns</div>
+            <div class="description"><em>true</em> if the connection was removed or <em>false</em> if none connection
+            with that identifier was found.</div>
+        </div>
+        
+        <div><br/></div>
+                
+        <h2 class="method">jqSimpleConnect.removeAll</h2>
+
+        <div class="method">
+            <div class="definition"><span>jqSimpleConnect.removeAll = function()</span></div>
+            
+            <div class="description">Removes all the connections in the page.</div>
+        </div>
+    </body>
+</html>

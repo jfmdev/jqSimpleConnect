@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+    <head>
+        <title>jsSimpleConnect - Basic examples</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link type="text/css" rel="stylesheet" href="css/main.css"/>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jqSimpleConnect.min.js"></script>
+    </head>
+    <body>
+        <div class="title">jsSimpleConnect - Basic examples</div>
+        
+        <h1>Requirements</h1>
+        
+        <div>In order to run the examples, the JavaScript libraries of <em>jqSimpleConnect</em> and <em>jQuery</em> must be included in the
+        &lt;head&gt; of the HTML file:</div>
+        
+        <pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jqSimpleConnect-1.0.js&quot;&gt;&lt;/script&gt;
+        </pre>
+        
+        <h1>Demo 1</h1>
+        
+        <h2>Code</h2>
+        <pre>
+&lt;div style=&quot;position:relative; height: 80px;&quot;&gt;
+    &lt;div id=&quot;div_a&quot; style=&quot;position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div A&lt;/div&gt;
+    &lt;div id=&quot;div_b&quot; style=&quot;position:absolute; top:50px; left:150px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div B&lt;/div&gt;
+    &lt;div id=&quot;div_c&quot; style=&quot;position:absolute; top:25px; left:250px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div C&lt;/div&gt;
+    &lt;div id=&quot;div_d&quot; style=&quot;position:absolute; top:25px; left:400px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div D&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    jqSimpleConnect.connect(&quot;#div_a&quot;, &quot;#div_b&quot;, {radius: 8, color: 'green'});
+    jqSimpleConnect.connect(&quot;#div_c&quot;, &quot;#div_d&quot;, {radius: 10, color: '#0000ff'});
+&lt;/script&gt;
+        </pre>
+        
+        <h2>Result</h2>
+        <div>
+            <div style="position:relative; height: 80px;">
+                <div id="div_a" style="position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;">Div A</div>
+                <div id="div_b" style="position:absolute; top:50px; left:150px; border:1px solid black; background-color:white; padding:5px;">Div B</div>
+                <div id="div_c" style="position:absolute; top:25px; left:250px; border:1px solid black; background-color:white; padding:5px;">Div C</div>
+                <div id="div_d" style="position:absolute; top:25px; left:400px; border:1px solid black; background-color:white; padding:5px;">Div D</div>
+            </div>
+            <script type="text/javascript">
+                jqSimpleConnect.connect("#div_a", "#div_b", {radius: 8, color: 'green'});
+                jqSimpleConnect.connect("#div_c", "#div_d", {radius: 10, color: '#0000ff'});
+            </script>
+        </div>
+
+        <h1>Demo 2</h1>
+        
+        <h2>Code</h2>
+        <pre>
+&lt;div style=&quot;position:relative; height: 110px;&quot;&gt;
+    &lt;div id=&quot;div_e&quot; style=&quot;position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div E&lt;/div&gt;
+    &lt;div id=&quot;div_f&quot; style=&quot;position:absolute; top:75px; left:150px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div F&lt;/div&gt;
+    &lt;div id=&quot;div_g&quot; style=&quot;position:absolute; top:5px; left:250px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div G&lt;/div&gt;
+    &lt;div id=&quot;div_h&quot; style=&quot;position:absolute; top:75px; left:400px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div H&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    jqSimpleConnect.connect(&quot;#div_e&quot;, &quot;#div_f&quot;, {radius: 8, color: 'darkcyan', anchorA: 'horizonal', anchorB: 'vertical'});
+    jqSimpleConnect.connect(&quot;#div_g&quot;, &quot;#div_h&quot;, {radius: 8, color: 'darkcyan', anchorA: 'vertical', anchorB: 'horizontal'});
+&lt;/script&gt;
+        </pre>
+        
+        <h2>Result</h2>
+        <div>
+            <div style="position:relative; height: 110px;">
+                <div id="div_e" style="position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;">Div E</div>
+                <div id="div_f" style="position:absolute; top:75px; left:150px; border:1px solid black; background-color:white; padding:5px;">Div F</div>
+                <div id="div_g" style="position:absolute; top:5px; left:250px; border:1px solid black; background-color:white; padding:5px;">Div G</div>
+                <div id="div_h" style="position:absolute; top:75px; left:400px; border:1px solid black; background-color:white; padding:5px;">Div H</div>
+            </div>
+            <script type="text/javascript">
+                jqSimpleConnect.connect("#div_e", "#div_f", {radius: 8, color: 'darkcyan', anchorA: 'horizonal', anchorB: 'vertical'});
+                jqSimpleConnect.connect("#div_g", "#div_h", {radius: 8, color: 'darkcyan', anchorA: 'vertical', anchorB: 'horizontal'});
+            </script>
+        </div>
+
+        <h1>Demo 3</h1>
+        
+        <h2>Code</h2>
+        <pre>
+&lt;div style=&quot;position:relative; height: 110px;&quot;&gt;
+    &lt;div id=&quot;div_i&quot; style=&quot;position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div I&lt;/div&gt;
+    &lt;div id=&quot;div_j&quot; style=&quot;position:absolute; top:75px; left:150px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div J&lt;/div&gt;
+    &lt;div id=&quot;div_k&quot; style=&quot;position:absolute; top:5px; left:250px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div K&lt;/div&gt;
+    &lt;div id=&quot;div_l&quot; style=&quot;position:absolute; top:75px; left:400px; border:1px solid black; background-color:white; padding:5px;&quot;&gt;Div L&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    jqSimpleConnect.connect(&quot;#div_i&quot;, &quot;#div_j&quot;, {radius: 8, color: 'darkviolet', anchorA: 'horizonal', anchorB: 'horizonal', roundedCorners: true});
+    jqSimpleConnect.connect(&quot;#div_k&quot;, &quot;#div_l&quot;, {radius: 8, color: 'darkviolet', anchorA: 'vertical', anchorB: 'vertical', roundedCorners: true});
+&lt;/script&gt;
+        </pre>
+        
+        <h2>Result</h2>
+        <div>
+            <div style="position:relative; height: 110px;">
+                <div id="div_i" style="position:absolute; top:5px; left:5px; border:1px solid black; background-color:white; padding:5px;">Div I</div>
+                <div id="div_j" style="position:absolute; top:75px; left:150px; border:1px solid black; background-color:white; padding:5px;">Div J</div>
+                <div id="div_k" style="position:absolute; top:5px; left:250px; border:1px solid black; background-color:white; padding:5px;">Div K</div>
+                <div id="div_l" style="position:absolute; top:75px; left:400px; border:1px solid black; background-color:white; padding:5px;">Div L</div>
+            </div>
+            <script type="text/javascript">
+                jqSimpleConnect.connect("#div_i", "#div_j", {radius: 8, color: 'darkviolet', anchorA: 'horizonal', anchorB: 'horizonal', roundedCorners: true});
+                jqSimpleConnect.connect("#div_k", "#div_l", {radius: 8, color: 'darkviolet', anchorA: 'vertical', anchorB: 'vertical', roundedCorners: true});
+            </script>
+        </div>        
+    </body>
+</html>
