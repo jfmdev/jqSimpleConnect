@@ -1,6 +1,6 @@
 {
   "name": "jq-simple-connect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight JavaScript library which allows to visually connect elements in a web page",
   "main": "index.js",
   "scripts": {
