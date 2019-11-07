@@ -185,7 +185,10 @@ jqSimpleConnect.connect = function(elementA, elementB, options) {
     connection.anchorA = (options != null && options.anchorA != null && (options.anchorA == 'vertical' || options.anchorA == 'horizontal'))? options.anchorA : 'horizontal';
     connection.anchorB = (options != null && options.anchorB != null && (options.anchorB == 'vertical' || options.anchorB == 'horizontal'))? options.anchorB : 'horizontal';
     connection.roundedCorners = options != null && options.roundedCorners != null && (options.roundedCorners == true || options.roundedCorners == 'true');
-
+	connection.click = (options != null && options.click != null)? options.click : null;
+	connection.mouseover = (options != null && options.mouseover != null)? options.mouseover : null;
+	connection.mouseout = (options != null && options.mouseout != null)? options.mouseout : null;
+    
     // Add connection to the connection's list.
     jqSimpleConnect._connections[connection.id] = connection;
 
@@ -200,6 +203,20 @@ jqSimpleConnect.connect = function(elementA, elementB, options) {
     jQuery('body').prepend(div.replace('divUniqueIdentifier', connection.id + '_2'));
     jQuery('body').prepend(div.replace('divUniqueIdentifier', connection.id + '_3'));
 
+    jQuery("."+connection.id).click(function() {
+		if(typeof connection.click == "function") {
+			connection.click(connection);
+		}
+	}).on("mouseover", function() {
+		if(typeof connection.mouseover == "function") {
+			connection.mouseover(connection);
+		}
+	}).on("mouseout", function() {
+		if(typeof connection.mouseout == "function") {
+			connection.mouseout(connection);
+		}
+	});
+    
     // Position connection.
     jqSimpleConnect._positionConnection(connection);
     
